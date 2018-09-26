@@ -9,7 +9,7 @@ public class JString {
     private int free;
     private char[] buffer;
 
-    public static JString create(char[] content, short length) {
+    public static JString create(char[] content, int length) {
         JString sds = new JString();
         sds.length = length;
         sds.free = 0;
@@ -43,4 +43,8 @@ public class JString {
         return free;
     }
 
+    @Override
+    public String toString() {
+        return new String(this.buffer);
+    }
 }
